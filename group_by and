@@ -1,0 +1,27 @@
+input = {:a=>{:type=>"values_of_list", :values=>[{:type=>"b", :id=>"123"}, {:type=>"b", :id=>"456"}]}}
+
+
+new_hash = Hash.new()
+output = Hash.new()
+ input.each do|x,y| 
+   y.each {|a,b| 
+   if b.is_a? Array
+   new_hash = b
+    end   
+   }
+   end
+                    
+                
+  # print new_hash            
+
+
+
+ output = new_hash.group_by { |h1| h1[:type] }.map do |k,v|
+  { :type => k, :id =>  v.map { |h2| h2[:id] }.join(" ,") } 
+end
+
+#renaming hash key
+
+puts output
+
+
