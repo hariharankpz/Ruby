@@ -1,5 +1,5 @@
 input = {:a=>{:type=>"values_of_list", :values=>[{:type=>"b", :id=>"123"}, {:type=>"b", :id=>"456"}]}}
-
+Output = {:new_hash=>"123,456"}
 
 new_hash = Hash.new()
 output = Hash.new()
